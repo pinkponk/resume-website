@@ -1,0 +1,32 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.projects {
+    padding: 2rem;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-thumb {
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: auto;
+    animation: fadeIn 2s;
+}

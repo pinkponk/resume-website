@@ -1,0 +1,27 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.about-me {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-me img {
+    max-width: 150px;
+    border-radius: 50%;
+    animation: fadeIn 2s;
+}
+
+.about-me p {
+    max-width: 600px;
+}

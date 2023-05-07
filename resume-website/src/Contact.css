@@ -1,0 +1,9 @@
+/* src/Contact.css */
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}

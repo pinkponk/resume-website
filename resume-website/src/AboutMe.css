@@ -8,20 +8,61 @@
     }
 }
 
-
 .about-me {
     padding: 2rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me-content {
+    display: flex;
     align-items: center;
     justify-content: space-around;
+    animation: fadeIn 2s;
 }
 
 .about-me img {
     max-width: 150px;
     border-radius: 50%;
-    animation: fadeIn 2s;
+    margin-right: 2rem;
 }
 
-.about-me p {
+.about-me-text {
     max-width: 600px;
+}
+
+.skills {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills-group {
+    margin-right: 1rem;
+}
+
+.skills-group h4 {
+    margin-bottom: 0.5rem;
+}
+
+.skills-group ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-group li {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.others {
+    color: gray;
 }

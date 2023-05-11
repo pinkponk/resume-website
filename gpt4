@@ -1,0 +1,357 @@
+I want you to program a nice resume website. 
+
+When entering the site you should be greeted by an almost full sized background video with some text and profile picture as overlay. 
+
+Scrolling down will show a section with a text about me and a photo of me which is animated. 
+
+Scrolling further shows an animated grid of thumbnails for projects I have done. The projects can be filtered. 
+
+Finally there is a animated timeline showing my education and work experience. 
+
+I use the following tools:
+- Yarn
+- Webpack
+- React
+- Vscode
+- Babel
+
+I have so far split up the code into these sections and have a simple site working:
+- App.js
+- Start.js
+- AboutMe.js
+- Projects.js
+- Timeline.js
+- Menu.js
+
+This is my color palette:
+#FE938C
+#E6B89C
+#EAD2AC
+#9CAFB7
+#4281A4
+
+You can use dummy data for the text and images.
+
+Can you help me to improve the AboutMe section. I still want the profile picture to the left and a text to the right but could you style it a bit and add some graphics in order to better present me and my skills. 
+
+Programing:
+Strong: Python, Rust, Linux, Git,  Docker, Kubernetes, Tensorflow, Pytorch, Bevy.
+Others: Javascript, Web assembly, OpenAPI, FastAPI, Poetry, C++, Simulink, Vim, Matlab, C, Java, Webpack, Anaconda, Vscode, Pycharm.
+
+Artificial Intelligence:
+Strong: GMM, unsupervised learning, seq2Seq, object detection, anomaly detection.
+Others: Transformer, LSTM, RL, GAN, VAE.
+
+Robotics:
+Strong: ROS1, ROS2, Inventor, Control Theory.
+Others: Blender, 3D Printing, Solid Edge, Embedded, Gazebo, Webots.
+
+items categorized as strong are what I'm best at and items in Others are less important and can be written with smaller font and grayed out.
+
+Can you order these in a bingo styled grid with the items specified as others in grey text and the items in Strong with bold grey text. Also when a user hover over a square a tooltip should appear and the square should be highlighted. When clicked it should stay highlighted and if a row or column have all been selected then a fireworks animation should show up with the text "you win!".
+
+There should only be one Bingo grid with all skills in shuffled order. The categories should have squares with a tinted background color, for example all the Programming skills should have blue tinted backgrounds.
+
+The skills should be selectable and when an entire row or column is selected the screen should get blurred and a "you win" message should pop up which can be closed. Also add a close button to the "You win" message that pops up.
+
+I have this so far:
+```javascript
+// src/SkillGrid.js
+import React, { useEffect, useState } from 'react';
+import './SkillGrid.css';
+
+const SkillGrid = ({ skillGroups }) => {
+    const [skills, setSkills] = useState([]);
+    const [selected, setSelected] = useState([]);
+    const [win, setWin] = useState(false);
+    const [gridSize, setGridSize] = useState(0);
+
+    useEffect(() => {
+        let shuffledSkills = [];
+        skillGroups.forEach((group) => {
+            shuffledSkills = shuffledSkills.concat(group.skills.map((skill) => ({ ...skill, category: group.name })));
+        });
+
+        shuffledSkills.sort(() => Math.random() - 0.5);
+        setSkills(shuffledSkills);
+
+        // Calculate the grid size dynamically
+        const calculatedGridSize = Math.ceil(Math.sqrt(shuffledSkills.length));
+        setGridSize(calculatedGridSize);
+    }, [skillGroups]);
+
+    useEffect(() => {
+        const checkWin = () => {
+            for (let row = 0; row < gridSize; row++) {
+                if (selected.every((index) => index >= row * gridSize && index < (row + 1) * gridSize)) {
+                    return true;
+                }
+            }
+            for (let col = 0; col < gridSize; col++) {
+                if (selected.every((index) => (index % gridSize) === col)) {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        if (selected.length >= gridSize && checkWin()) {
+            setWin(true);
+        } else {
+            setWin(false);
+        }
+    }, [selected, gridSize]);
+
+    const handleClick = (index) => {
+        setSelected((prevSelected) => {
+            if (prevSelected.includes(index)) {
+                return prevSelected.filter((i) => i !== index);
+            } else {
+                return [...prevSelected, index];
+            }
+        });
+    };
+
+    const getBackgroundColor = (skill) => {
+        const group = skillGroups.find((group) => group.name === skill.category);
+        return group.color;
+    };
+
+    return (
+        <>
+            <div className={`skill-grid${win ? ' blurred' : ''}`}>
+                {skills.map((skill, index) => (
+                    <div
+                        key={skill.name}
+                        className={`skill${selected.includes(index) ? ' selected' : ''}`}
+                        onClick={() => handleClick(index)}
+                        style={{
+                            backgroundColor: getBackgroundColor(skill),
+                            width: `calc(${100 / gridSize}% - 2px)`,
+                            // height: `calc(${100 / gridSize}% - 2px)`
+                        }}
+                    >
+                        <span className={`skill-name${skill.strong ? ' strong' : ''}`}>
+                            {skill.name}
+                        </span>
+                        <div className="skill-tooltip">{skill.description}</div>
+                    </div>
+                ))}
+            </div>
+            {win && (
+                <div className="win-message">
+                    You win!
+                    <button className="close-button" onClick={() => setWin(false)}>
+                        Close
+                    </button>
+                </div>
+            )}
+        </>
+    );
+};
+
+export default SkillGrid;
+```
+
+```css
+/* src/SkillGrid.css */
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-grid.blurred {
+    filter: blur(5px);
+}
+
+.skill {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.skill:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.skill.selected::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(69, 123, 157, 0.5);
+}
+
+.skill:hover .skill-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    top: calc(100% + 3px);
+    /* Slightly reduce the top value when hovering */
+    transition: opacity 0.3s ease-in, transform 0.2s ease-in-out;
+    /* Adjust the transition timing */
+}
+
+.skill-tooltip {
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 5px);
+    /* Increase the top value to move the tooltip further away */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 0.1s ease-out, transform 0.2s ease-in-out;
+    /* Adjust the transition timing */
+    z-index: 2;
+}
+
+.skill-name {
+    font-size: 0.9rem;
+    color: #333;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.skill-name.strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.win-message {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+}
+
+.close-button {
+    display: inline-block;
+    background-color: #e63946;
+    padding: 5px 10px;
+    margin-top: 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+```
+
+```javascript
+// src/AboutMe.js
+import React from 'react';
+import './AboutMe.css';
+import SkillGrid from './SkillGrid';
+import profileImage from './assets/profile-image.jpg';
+
+const AboutMe = () => {
+    const skillGroups = [
+        {
+            name: 'Programming',
+            color: '#a8dadc',
+            skills: [
+                { name: 'Python', strong: true, description: 'Strong expertise in Python programming' },
+                { name: 'Rust', strong: true, description: 'Proficient in Rust programming' },
+                { name: 'Linux', strong: true, description: 'Extensive experience with Linux systems' },
+                { name: 'Git', strong: true, description: 'Skilled in using Git version control' },
+                { name: 'Docker', strong: true, description: 'Experienced in containerizing applications with Docker' },
+                { name: 'Kubernetes', strong: true, description: 'Proficient in orchestrating containers with Kubernetes' },
+                { name: 'Tensorflow', strong: true, description: 'Skilled in using Tensorflow for machine learning' },
+                { name: 'Pytorch', strong: true, description: 'Proficient in Pytorch for machine learning' },
+                { name: 'Bevy', strong: true, description: 'Experienced in using Bevy game engine' },
+                { name: 'Javascript', strong: false, description: 'Familiar with Javascript programming' },
+                { name: 'Web assembly', strong: false, description: 'Experience with Web assembly' },
+                { name: 'OpenAPI', strong: false, description: 'Familiar with OpenAPI for API documentation' },
+                { name: 'FastAPI', strong: false, description: 'Experience in developing web applications with FastAPI' },
+                { name: 'Poetry', strong: false, description: 'Familiar with Poetry for Python dependency management' },
+                { name: 'C++', strong: false, description: 'Experience with C++ programming' },
+                { name: 'Simulink', strong: false, description: 'Familiar with Simulink for modeling and simulation' },
+                { name: 'Vim', strong: false, description: 'Experience using Vim text editor' },
+                { name: 'Matlab', strong: false, description: 'Familiar with Matlab programming' },
+                { name: 'C', strong: false, description: 'Experience with C programming' },
+                { name: 'Java', strong: false, description: 'Familiar with Java programming' },
+                { name: 'Webpack', strong: false, description: 'Experience using Webpack for bundling' },
+                { name: 'Anaconda', strong: false, description: 'Familiar with Anaconda for Python environment management' },
+                { name: 'Vscode', strong: false, description: 'Experience using Visual Studio Code' },
+                { name: 'Pycharm', strong: false, description: 'Familiar with Pycharm IDE' },
+            ],
+        },
+        {
+            name: 'Artificial Intelligence',
+            color: '#a8da11',
+            skills: [
+                { name: 'GMM', strong: true, description: 'Strong expertise in Gaussian Mixture Models' },
+                { name: 'Unsup learning', strong: true, description: 'Proficient in unsupervised learning techniques' },
+                { name: 'Seq2Seq', strong: true, description: 'Experienced in sequence-to-sequence models' },
+                { name: 'Object detection', strong: true, description: 'Skilled in object detection algorithms' },
+                { name: 'Anomaly detection', strong: true, description: 'Proficient in anomaly detection techniques' },
+                { name: 'Transformer', strong: false, description: 'Familiar with Transformer models' },
+                { name: 'LSTM', strong: false, description: 'Experience using LSTM networks' },
+                { name: 'RL', strong: false, description: 'Familiar with Reinforcement Learning' },
+                { name: 'GAN', strong: false, description: 'Experience with Generative Adversarial Networks' },
+                { name: 'VAE', strong: false, description: 'Familiar with Variational Autoencoders' },
+            ],
+        },
+        {
+            name: 'Robotics',
+            color: '#a8dad5',
+            skills: [
+                { name: 'ROS1', strong: true, description: 'Strong expertise in Robot Operating System 1' },
+                { name: 'ROS2', strong: true, description: 'Proficient in Robot Operating System 2' },
+                { name: 'Inventor', strong: true, description: 'Experienced in using Autodesk Inventor' },
+                { name: 'Control Theory', strong: true, description: 'Skilled in Control Theory for robotics' },
+                { name: 'Blender', strong: false, description: 'Familiar with Blender for 3D modeling' },
+                { name: '3D Printing', strong: false, description: 'I have both a FDM and a Resin printer at home. I got my first 3d printer 8 years ago.' },
+                { name: 'Solid Edge', strong: false, description: 'Familiar with Solid Edge for CAD' },
+                { name: 'Embedded', strong: false, description: 'Experience with embedded systems' },
+                { name: 'Gazebo', strong: false, description: 'Familiar with Gazebo for robot simulation' },
+                { name: 'Webots', strong: false, description: 'Experience with Webots for robot simulation' },
+            ],
+        },
+    ];
+
+    return (
+        <section className="about-me" id="about-me">
+            <h2>About Me</h2>
+            <div className="about-me-content">
+                <img src={profileImage} alt="Profile" />
+                <div className="about-me-text">
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <SkillGrid skillGroups={skillGroups} />
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default AboutMe;
+```

@@ -6,9 +6,7 @@
 .about-me h2 {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #1d3557;
+    color: #4281A4;
 }
 
 .about-me-content {
@@ -33,9 +31,9 @@
 }
 
 .about-me-text p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
 }
 

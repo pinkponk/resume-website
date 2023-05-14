@@ -8,21 +8,50 @@ import profileImage from './assets/profile-image.jpg';
 const Start = () => {
     const [overlayVisible, setOverlayVisible] = useState(false);
 
+    const [videoBlurred, setVideoBlurred] = useState(false);
+
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setOverlayVisible(true);
-        }, 2000);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, []);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setVideoBlurred(true);
+        }, 7000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!overlayVisible) {
+                setOverlayVisible(true);
+                setVideoBlurred(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener
+                ('scroll', handleScroll);
+        };
+    }, [overlayVisible]);
+
+
     return (
         <section className="hero">
-            <video src={backgroundImage} autoPlay loop muted className={overlayVisible ? 'blurred' : ''} />
+            <video src={backgroundImage} autoPlay loop muted className={videoBlurred ? 'blurred' : ''} />
             <div className={`overlay ${overlayVisible ? 'visible' : ''}`}>
                 <img src={profileImage} alt="Profile" />
-                <h1>Your Name</h1>
-                <h2>Your Title</h2>
+                <h1>Henrik Djurestål</h1>
+                <h2>Father to both a daughter, robots, and AI programs</h2>
                 <Link to="/contact" className="contact-btn">Contact Me</Link>
             </div>
         </section>

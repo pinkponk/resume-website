@@ -20,16 +20,18 @@
 
 .menu a {
     text-decoration: none;
-    color: #333;
     font-size: 1rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
+
+    color: #4281A4;
+
 }
 
 .menu a:hover {
-    background-color: #333;
+    background-color: #FE938C;
     color: #fff;
 }
 

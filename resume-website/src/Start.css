@@ -17,7 +17,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    transition: filter 1s;
+    transition: filter 2s;
 }
 
 .overlay {
@@ -56,10 +56,15 @@ body {
 .contact-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #FE938C;
     color: white;
+    font-weight: bold;
     text-decoration: none;
     border-radius: 0.25rem;
+}
+
+.contact-btn:hover {
+    background-color: #E6B89C;
 }
 
 .visible {

@@ -1,14 +1,16 @@
 /* src/EmailForm.css */
 .email-form {
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4281A4;
 }
 
 .email-form form {
-    width: 100%;
-    max-width: 900px;
+    width: 300px;
     display: flex;
     flex-direction: column;
 }
@@ -28,7 +30,7 @@
 
 .email-form button {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #FE938C;
     color: white;
     border: none;
     border-radius: 0.25rem;
@@ -36,5 +38,5 @@
 }
 
 .email-form button:hover {
-    background-color: #0056b3;
+    background-color: #E6B89C;
 }

@@ -27,7 +27,7 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.mp4$/,
+                test: /\.(mp4|mkv)$/,
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -41,6 +41,7 @@ module.exports = {
         static: {
             directory: path.join(__dirname, 'public'),
         }, compress: true,
-        port: 9000
+        port: 9000,
+        historyApiFallback: true,
     }
 };

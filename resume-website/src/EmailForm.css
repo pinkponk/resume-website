@@ -40,3 +40,33 @@
 .email-form button:hover {
     background-color: #E6B89C;
 }
+
+.popup-message {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+}
+
+.close-button {
+    display: inline-block;
+    background-color: #FE938C;
+    padding: 5px 10px;
+    margin-left: 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close-button button:hover {
+    background-color: #E6B89C;
+}

@@ -5,6 +5,7 @@ import './EmailForm.css';
 
 const EmailForm = () => {
     const [formValues, setFormValues] = useState({ name: '', email: '', message: '' });
+    const [showMessage, setShowMessage] = useState(false);
 
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -15,6 +16,7 @@ const EmailForm = () => {
         emailjs.send('service_6wb2prf', 'template_ss3u4y3', formValues, 'WRQrgKpCdhF5XB_KV')
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+                setShowMessage(true);
             }, (err) => {
                 console.log('FAILED...', err);
             });
@@ -50,6 +52,14 @@ const EmailForm = () => {
                 />
                 <button type="submit">Send Message</button>
             </form>
+            {showMessage && (
+                <div className="popup-message">
+                    Message sent!
+                    <button className="close-button" onClick={() => setShowMessage(false)}>
+                        Close
+                    </button>
+                </div>
+            )}
         </section>
     );
 };

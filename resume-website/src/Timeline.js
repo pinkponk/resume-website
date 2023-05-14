@@ -3,8 +3,8 @@ import './Timeline.css';
 import arc from './assets/time-arc.png';
 import intmach from './assets/time-im.jpg';
 import kth from './assets/time-kth.png';
-import norra from './assets/time-norra.png';
-import paper from './assets/time-paper.png';
+import norra from './assets/time-norra.jpg';
+import paper from './assets/time-paper.jpg';
 import saab from './assets/time-saab.jpg';
 import scania from './assets/time-scania.jpg';
 import stipendium from './assets/time-stipendium.jpg';
@@ -13,9 +13,9 @@ import uiuc from './assets/time-uiuc.png';
 
 const TimelineData = [
     {
-        type: 'Experience',
-        date: '2021-2022',
-        institution: 'Saab Emerging Technologies AB Technical project manager',
+        type: 'Technical project manager',
+        date: '2021-ongoing',
+        institution: 'Saab Emerging Technologies AB',
         image: saab,
         details: [
             'The new software product was broken out 2021 to a new saab owned company.',
@@ -23,9 +23,20 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'Co-owner',
+        date: '2014-ongoing',
+        institution: 'Intelligent Machines Stockholm AB',
+        image: intmach,
+        details: [
+            'Product development in the field of robotics.',
+            'Designed a commercial service robot in CAD.',
+            'Webpage: www.intmach.com',
+        ],
+    },
+    {
+        type: 'Team lead',
         date: '2020-2021',
-        institution: 'Saab AB Team lead',
+        institution: 'Saab AB',
         image: saab,
         details: [
             'I lead a fantastic development team that built a completely new Saab product',
@@ -33,9 +44,9 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'System developer',
         date: '2018-2022',
-        institution: 'Saab AB system developer',
+        institution: 'Saab AB',
         image: saab,
         details: [
             'Started up new product at the department of cyber security.',
@@ -44,9 +55,9 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'Software developer',
         date: '2017-2018',
-        institution: 'Saab AB software engineer',
+        institution: 'Saab AB',
         image: saab,
         details: [
             'Worked with automatic surveillance in the data fusion department.',
@@ -55,9 +66,9 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'Master thesis',
         date: '2017',
-        institution: 'Saab AB Master thesis',
+        institution: 'Saab AB',
         image: saab,
         details: [
             'Studied how deep learning can be used in sea surveillance.',
@@ -65,18 +76,7 @@ const TimelineData = [
             'Worked with: Python, Keras, Theano, Deep learning, CNN network.',
         ],
     },
-    {
-        type: 'Experience',
-        date: '2014-ongoing',
-        institution: 'Intelligent Machines Stockholm AB part owner',
-        image: intmach,
-        details: [
-            'Product development in the field of robotics.',
-            'Designed a commercial service robot in CAD.',
-            'Webpage: www.intmach.com/starteng/home.html',
-            'Worked with: ROS, CAD, C++, Matlab, CFD Simulation, Web Design.',
-        ],
-    },
+
     {
         type: 'Education',
         date: '2011-2017',
@@ -89,23 +89,23 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Miscellaneous',
+        type: 'Scholarship',
         date: '2016',
         institution: 'Henrik Göranssons Sandviken Scholarship for good grades.',
         image: stipendium,
         details: [],
     },
     {
-        type: 'Miscellaneous',
+        type: 'Scholarship',
         date: '2016',
         institution: 'General Scholarship for good grades.',
         image: stipendium,
         details: [],
     },
     {
-        type: 'Experience',
+        type: 'KTH Summer job',
         date: '2016',
-        institution: 'Royal Institute of Technology, KTH Summer job',
+        institution: 'Royal Institute of Technology',
         image: kth,
         details: [
             'Designed and constructed a 3D lidar from a 2D lidar for a drone.',
@@ -124,9 +124,9 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'KTH part time job',
         date: '2015-2016',
-        institution: 'Royal Institute of Technology, KTH Part time',
+        institution: 'Royal Institute of Technology',
         image: kth,
         details: [
             'Worked as a teaching assistant in an electrical science course',
@@ -135,9 +135,9 @@ const TimelineData = [
     },
 
     {
-        type: 'Miscellaneous',
+        type: 'Bachelor thesis',
         date: '2015',
-        institution: 'Bachelor thesis; The Paralyzed Quadruped, A study of robotic gaits.',
+        institution: 'The Paralyzed Quadruped, A study of robotic gaits.',
         image: paper,
         details: [],
     },
@@ -152,9 +152,9 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'Summer job',
         date: '2013',
-        institution: 'Scania AB Summer job',
+        institution: 'Scania AB',
         image: scania,
         details: [
             'Designed and created a calibration setup and a shakedown rig for the side air divertors of the new Scania truck.',
@@ -163,9 +163,9 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Experience',
+        type: 'Summer job',
         date: '2012',
-        institution: 'Scania AB Summer job',
+        institution: 'Scania AB',
         image: scania,
         details: [
             'Designed and created an automatic air diverter for Scania trucks. The technology makes it possible to increase fuel efficiency.',
@@ -182,7 +182,7 @@ const TimelineData = [
         ],
     },
     {
-        type: 'Miscellaneous',
+        type: 'Scholarship',
         date: '2011',
         institution: 'Dialog-89 scholarship for building a fully electrical motorcycle.',
         image: stipendium,

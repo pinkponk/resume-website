@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import githubLogo from '../assets/github-mark-white.png'; // Import the GitHub logo
-import bannerImage from '../assets/project-resume-website/project-image.png';
+import bannerImage from '../assets/project-resume-website/project-image.jpg';
+import rockImage from '../assets/project-resume-website/rock.jpg';
 import video0 from '../assets/project-resume-website/video0.mp4';
 import video1 from '../assets/project-resume-website/video1.mp4';
 import styles from './ProjectDetail.module.css';
@@ -55,6 +56,9 @@ const Project1 = () => {
                             Your browser does not support the video tag.
                         </video>
                     </div>
+                </div>
+                <div className={styles['grid-item']}>
+                    <img src={rockImage} alt="Rock" className={styles['rock-image']} />
                 </div>
                 <div className={styles['grid-item']}>
                     <p>In conclusion, the creation of my resume website was a rewarding experience that allowed me to explore the potential of AI and cutting-edge technologies like GPT-4 and Stable Diffusion. The result is a visually stunning and engaging platform that effectively highlights my skills and expertise, demonstrating the power of collaboration between human creativity and artificial intelligence.</p>

@@ -2,11 +2,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import githubLogo from '../assets/github-mark-white.png'; // Import the GitHub logo
-import bannerImage from '../assets/project-life-code/banner.png';
+import bannerImage from '../assets/project-life-code/banner.jpg';
+import videoDev from '../assets/project-life-code/dev.mp4';
 import videoFoxRabbits from '../assets/project-life-code/fox_rabbits.mp4';
-import video0 from '../assets/project-life-code/intro_fancy.mkv';
+import videoGrass from '../assets/project-life-code/grass.mp4';
 import videoInvest from '../assets/project-life-code/invest.mp4';
-import video1 from '../assets/project-life-code/video2.mkv';
+import videoYoutube from '../assets/project-life-code/main_intro_no_sound.mp4';
 import youtubeLogo from '../assets/youtube-icon.png'; // Import the YouTube logo
 import styles from './ProjectDetail.module.css';
 
@@ -26,12 +27,12 @@ const Project1 = () => {
                     <p>Life Code is an upcoming game that allows players to create species in a sandbox-like world while maintaining a balanced ecosystem. Players can write real code in programming languages like Python and JavaScript to describe their species' behavior in the world. The game is designed to run in a browser, making it easily accessible to everyone.</p>
                     <p>The game is inspired by coding games like Battlesnake and Sebastian Lague's video about balancing ecosystems. Players will need to consider the relationships between predators and prey, as well as the impact of their species on the environment, such as how they affect plant life.</p>
                 </div>
+
                 <div className={styles['grid-item']}>
                     <div className={styles['video-container']}>
                         <video
                             className={styles.video}
-                            src={video0}
-                            loop
+                            src={videoFoxRabbits}
                             muted
                             playsInline
                             autoPlay
@@ -45,7 +46,7 @@ const Project1 = () => {
                     <div className={styles['video-container']}>
                         <video
                             className={styles.video}
-                            src={video1}
+                            src={videoDev}
                             loop
                             muted
                             playsInline
@@ -79,12 +80,35 @@ const Project1 = () => {
                         </video>
                     </div>
                 </div>
-
                 <div className={styles['grid-item']}>
                     <div className={styles['video-container']}>
                         <video
                             className={styles.video}
-                            src={videoFoxRabbits}
+                            src={videoYoutube}
+                            loop
+                            muted
+                            playsInline
+                            autoPlay
+                            preload="metadata"
+                        >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div className={styles['grid-item']}>
+                    <h3>Youtube</h3>
+                    <p>I have started I Youtube channel where people can follow the development journey. Click the link down below and subscribe!</p>
+                </div>
+                <div className={styles['grid-item']}>
+                    <h3>Public code</h3>
+                    <p>The game itself is not open sourced but a portion of the rendering code is! I had problem rendering the amount of grass and objects I wanted and spent a lot of time in order to get it working. I open sourced it in case other people were interested. You can check it out with the github link below.</p>
+                </div>
+                <div className={styles['grid-item']}>
+                    <div className={styles['video-container']}>
+                        <video
+                            className={styles.video}
+                            src={videoGrass}
+                            loop
                             muted
                             playsInline
                             autoPlay
@@ -126,7 +150,7 @@ const Project1 = () => {
                     </span>
                 </a>
                 <a
-                    href="https://www.youtube.com/channel/your_channel_id" // Replace with your YouTube channel URL
+                    href="https://www.youtube.com/channel/UCqzbiRaNXJa50J4kvJvKpAg" // Replace with your YouTube channel URL
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles['youtube-button']}

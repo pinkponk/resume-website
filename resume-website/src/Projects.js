@@ -4,12 +4,15 @@ import { InView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import './Projects.css';
 import projectImageWebsiteVideo from './assets/background-video.mp4';
-import projectLifeCodeVideo from './assets/project-life-code/intro.mp4';
-import projectLifeCodeImage from './assets/project-life-code/project-image.png';
-import projectResumeWebsiteImage from './assets/project-resume-website/project-image.png';
-import projectImage3 from './assets/project3/project-image.jpg';
-import projectImage3Video from './assets/project3/project-video.mp4';
-
+import projectElectricMCImage from './assets/project-electric-mc/project-image.jpg';
+import projectFusionImage from './assets/project-fusion/project-image.png';
+import projectGandalfImage from './assets/project-gandalf/project-image.jpg';
+import projectLifeCodeVideo from './assets/project-life-code/hover-media.mp4';
+import projectLifeCodeImage from './assets/project-life-code/project-image.jpg';
+import projectLineRobotImage from './assets/project-line-robot/project-image.jpg';
+import projectMasterThesisImage from './assets/project-master/project-image.jpg';
+import projectResumeWebsiteImage from './assets/project-resume-website/project-image.jpg';
+import projectRobotDogImage from './assets/project-robot-dog/project-image.jpg';
 const projects = [
     {
         title: 'Resume website',
@@ -26,12 +29,46 @@ const projects = [
         hoverMedia: projectLifeCodeVideo,
     },
     {
-        title: 'Project 3',
-        image: projectImage3,
-        route: '/projects/project-3',
-        externalLink: '',
-        hoverMedia: projectImage3Video,
+        title: 'Fusion Tokamak Simulation',
+        image: projectFusionImage,
+        route: '',
+        externalLink: 'https://github.com/pinkponk/Fusion-Tokamak-Simulation',
+        hoverMedia: '',
     },
+    {
+        title: 'Robotic Dog',
+        image: projectRobotDogImage,
+        route: '/projects/project-robot-dog',
+        externalLink: '',
+        hoverMedia: '',
+    },
+    {
+        title: 'Master Thesis',
+        image: projectMasterThesisImage,
+        route: '',
+        externalLink: 'https://ieeexplore.ieee.org/abstract/document/8455776',
+        hoverMedia: '',
+    },
+    {
+        title: 'Line robot',
+        image: projectLineRobotImage,
+        route: '',
+        externalLink: 'https://github.com/pinkponk/Line-Robot',
+        hoverMedia: '',
+    },
+    {
+        title: 'Gandalf at the door',
+        image: projectGandalfImage,
+        route: '',
+        externalLink: 'https://github.com/pinkponk/Gandalf-at-the-gate',
+        hoverMedia: '',
+    },
+    {
+        title: 'Electric MC',
+        image: projectElectricMCImage,
+        route: '',
+        externalLink: 'http://www.dialog-89.se/HenrikMC.html'
+    }
 ];
 
 const Projects = () => {

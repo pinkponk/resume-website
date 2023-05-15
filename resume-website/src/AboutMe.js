@@ -105,11 +105,14 @@ const AboutMe = () => {
                 <div className="about-me-text">
                     <p>
                         As a passionate advocate for the role technology plays in shaping our society, I am dedicated to contributing my skills and knowledge to the development of innovative solutions for the world of tomorrow. My educational background, including a degree in Mechanical Engineering and a Master's in Mechatronics (Robotics-ish) from the Royal Institute of Technology (KTH) in Stockholm, has provided me with a strong foundation in various disciplines such as neural networks, dynamics and motion control, artificial intelligence, and embedded systems.
-                        <p></p>
+                    </p>
+                    <p>
                         Over the years, I have had the opportunity to work on numerous projects involving product development, robotics, AI research, and more. My professional experience includes roles at Saab AB, where I worked on automatic surveillance, cyber security, and deep learning for sea surveillance, as well as part-time work for Intelligent Machines Stockholm AB in the field of robotics.
-                        <p> </p>
+                    </p>
+                    <p>
                         Aside from my professional pursuits, I am a fervent traveler, having lived in Japan for a year and continuously seeking new destinations to explore. My curiosity for new experiences also extends to my love of learning, as well as my penchant for playing board games with friends. On a personal note, I am married and a proud father to a one-year-old daughter.
-                        <p></p>
+                    </p>
+                    <p>
                         With a strong track record of projects under my belt, I am excited to continue pushing the boundaries of technology and innovation in order to make a meaningful impact on the world around us. My diverse skill set, combined with my passion for learning and personal growth, positions me as a valuable contributor to any team or project. As an engineer, husband, and father, I am driven by my commitment to creating a better future for my family and for society as a whole. I invite you to explore my work, skills, and experiences further, and I look forward to the possibility of working together to shape the world of tomorrow.
                     </p>
                 </div>

@@ -8,6 +8,30 @@ const SkillGrid = ({ skillGroups }) => {
     const [win, setWin] = useState(false);
     const [gridSize, setGridSize] = useState(0);
     const [hasWon, setHasWon] = useState(false);
+    const [tooltip, setTooltip] = useState({ visible: false, content: "", x: 0, y: 0 });
+
+    const handleMouseEnter = (e, description) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const screenWidth = window.innerWidth;
+
+        let offsetX = 0;
+        if (screenWidth <= 768 && rect.x + rect.width / 2 < screenWidth / 2) { // Left side of the screen
+            offsetX = 0.25 * screenWidth;
+        } else if (screenWidth <= 768 && rect.x + rect.width / 2 >= screenWidth / 2) { // Right side of the screen
+            offsetX = -0.25 * screenWidth;
+        }
+
+        setTooltip({
+            visible: true,
+            content: description,
+            x: rect.x + rect.width / 2 + offsetX,
+            y: rect.y + rect.height + 10,
+        });
+    };
+
+    const handleMouseLeave = () => {
+        setTooltip({ visible: false, content: "", x: 0, y: 0 });
+    };
 
     useEffect(() => {
         let concatSkills = [];
@@ -78,17 +102,24 @@ const SkillGrid = ({ skillGroups }) => {
                 {skills.map((skill, index) => (
                     <div
                         key={skill.name}
-                        className={`skill${selected.includes(index) ? ' selected' : ''}`}
+                        className={`skill${selected.includes(index) ? " selected" : ""}`}
                         onClick={() => handleClick(index)}
+                        onMouseEnter={(e) => handleMouseEnter(e, skill.description)}
+                        onMouseLeave={handleMouseLeave}
                         style={{
                             backgroundColor: getBackgroundColor(skill),
                             width: `calc(${100 / gridSize}% - 4px)`,
                         }}
                     >
-                        <span className={`skill-name`}>
-                            {skill.strong ? '⭐ ' : ''}{skill.name}
-                        </span>
-                        <div className="skill-tooltip">{skill.description}</div>
+                        <span className={`skill-name`}>{skill.strong ? "⭐ " : ""}{skill.name}</span>
+                        {tooltip.visible && (
+                            <div
+                                className="skill-tooltip"
+                                style={{ left: tooltip.x, top: tooltip.y }}
+                            >
+                                {tooltip.content}
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

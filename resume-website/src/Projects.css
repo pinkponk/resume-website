@@ -120,3 +120,22 @@
 .project-thumb.visible {
     animation: fadeIn 1s;
 }
+
+@media only screen and (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .project-thumb {
+        height: 200px;
+        width: 200px;
+    }
+
+    .project-thumb h3 {
+        font-size: 1rem;
+    }
+}

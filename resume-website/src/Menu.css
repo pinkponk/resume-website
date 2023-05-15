@@ -1,4 +1,8 @@
 /* src/Menu.css */
+* {
+    box-sizing: border-box;
+}
+
 .menu {
     display: flex;
     justify-content: space-around;
@@ -11,6 +15,7 @@
     transition: all 0.3s;
     opacity: 0;
     transform: translateY(-100%);
+    width: 100%;
 }
 
 .menu.visible {
@@ -38,4 +43,16 @@
 .menu a:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.4);
+}
+
+/* Media query for smartphone screens */
+@media (max-width: 768px) {
+    .menu a {
+        font-size: 0.7rem;
+        padding: 0.2;
+    }
+
+    .menu {
+        padding: 0.1rem;
+    }
 }

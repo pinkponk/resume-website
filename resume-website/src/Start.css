@@ -3,6 +3,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .hero {
@@ -75,4 +76,28 @@ body {
 
 .blurred {
     filter: blur(5px) brightness(0.7);
+}
+
+/* Media query for smartphone screens */
+@media (max-width: 768px) {
+    .overlay {
+        width: 90%;
+        text-align: center;
+    }
+
+    .overlay img {
+        max-width: 150px;
+    }
+
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+
+    .overlay h2 {
+        font-size: 1.2rem;
+    }
+
+    .contact-btn {
+        font-size: 1.5rem;
+    }
 }

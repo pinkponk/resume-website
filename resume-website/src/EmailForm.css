@@ -79,3 +79,9 @@
 .close-button button:hover {
     background-color: #E6B89C;
 }
+
+@media screen and (max-width: 768px) {
+    .email-form form {
+        width: 100%;
+    }
+}

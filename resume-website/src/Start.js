@@ -51,7 +51,7 @@ const Start = () => {
             <div className={`overlay ${overlayVisible ? 'visible' : ''}`}>
                 <img src={profileImage} alt="Profile" />
                 <h1>Henrik Djurestål</h1>
-                <h2>Father to both a daughter, robots, and AI programs</h2>
+                <h2>Father to a daughter, robots, and AI programs</h2>
                 <Link to="/contact" className="contact-btn">Contact Me</Link>
             </div>
         </section>

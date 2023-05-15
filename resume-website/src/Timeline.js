@@ -5,13 +5,22 @@ import intmach from './assets/time-im.jpg';
 import kth from './assets/time-kth.png';
 import norra from './assets/time-norra.jpg';
 import paper from './assets/time-paper.jpg';
+import paternity from './assets/time-paternity.jpg';
 import saab from './assets/time-saab.jpg';
 import scania from './assets/time-scania.jpg';
 import stipendium from './assets/time-stipendium.jpg';
 import uiuc from './assets/time-uiuc.png';
 
-
 const TimelineData = [
+    {
+        type: 'Paternity leave',
+        date: '2023-ongoing',
+        institution: 'At home',
+        image: paternity,
+        details: [
+            'I will back in september 2023',
+        ],
+    },
     {
         type: 'Technical project manager',
         date: '2021-ongoing',

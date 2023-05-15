@@ -1,5 +1,5 @@
 // src/projects/Project1.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import githubLogo from '../assets/github-mark-white.png'; // Import the GitHub logo
 import bannerImage from '../assets/project-resume-website/project-image.jpg';
@@ -10,6 +10,11 @@ import styles from './ProjectDetail.module.css';
 
 
 const Project1 = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className={styles['project-detail']}>
             <div
@@ -78,19 +83,27 @@ const Project1 = () => {
                     </ul>
                 </div>
             </div>
-            <a
-                href="https://github.com/pinkponk/resume-website"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles['github-button']}
-            >
-                <img src={githubLogo} alt="GitHub logo" className={styles['github-logo']} />
-                Visit Project
-            </a>
 
-            <Link to="/#projects" className={`${styles['back-to-projects']}`}>
-                Back to home
-            </Link>
+
+            <div className={styles['buttons-container']}>
+                <a
+                    href="https://github.com/pinkponk/resume-website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles['github-button']}
+                >
+                    <span style={{ display: 'flex', alignItems: 'center' }}>
+                        <img src={githubLogo} alt="GitHub logo" className={styles['github-logo']} />
+                        Code
+                    </span>
+                </a>
+                <span className={styles['link-container']}>
+                    <Link to="/#projects" className={`${styles['back-to-projects']}`}>
+                        Back to home
+                    </Link>
+                </span>
+
+            </div>
         </div>
     );
 };

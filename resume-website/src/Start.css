@@ -34,7 +34,7 @@ body {
 }
 
 .overlay img {
-    max-width: 150px;
+    max-width: 250px;
     border-radius: 50%;
     margin-bottom: 1rem;
 }
@@ -42,14 +42,14 @@ body {
 .overlay h1 {
     margin-bottom: 0.2rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
 .overlay h2 {
     margin-bottom: 1rem;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: normal;
 }
 
@@ -59,8 +59,9 @@ body {
     background-color: #FE938C;
     color: white;
     font-weight: bold;
+    font-size: 2rem;
     text-decoration: none;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
 }
 
 .contact-btn:hover {

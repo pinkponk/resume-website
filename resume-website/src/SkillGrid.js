@@ -82,8 +82,7 @@ const SkillGrid = ({ skillGroups }) => {
                         onClick={() => handleClick(index)}
                         style={{
                             backgroundColor: getBackgroundColor(skill),
-                            width: `calc(${100 / gridSize}% - 2px)`,
-                            // height: `calc(${100 / gridSize}% - 2px)`
+                            width: `calc(${100 / gridSize}% - 4px)`,
                         }}
                     >
                         <span className={`skill-name`}>

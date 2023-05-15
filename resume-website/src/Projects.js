@@ -38,8 +38,8 @@ const projects = [
     {
         title: 'Robotic Dog',
         image: projectRobotDogImage,
-        route: '/projects/project-robot-dog',
-        externalLink: '',
+        route: '',
+        externalLink: 'https://github.com/pinkponk/Robotic-Dog',
         hoverMedia: '',
     },
     {

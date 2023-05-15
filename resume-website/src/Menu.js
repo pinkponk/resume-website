@@ -7,21 +7,7 @@ const Menu = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const heroElement = document.querySelector('.hero');
-
-            // Check if the hero element exists before accessing its properties
-            if (heroElement) {
-                const heroHeight = heroElement.offsetHeight;
-                const currentScrollPos = window.pageYOffset;
-
-                if (currentScrollPos > heroHeight - 400) {
-                    setVisible(true);
-                } else {
-                    setVisible(false);
-                }
-            } else {
-                setVisible(true);
-            }
+            setVisible(true);
         };
 
         window.addEventListener('scroll', handleScroll);

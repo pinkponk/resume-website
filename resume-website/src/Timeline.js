@@ -184,9 +184,9 @@ const TimelineData = [
     {
         type: 'Scholarship',
         date: '2011',
-        institution: 'Dialog-89 scholarship for building a fully electrical motorcycle.',
+        institution: 'Dialog-89',
         image: stipendium,
-        details: [],
+        details: ['scholarship for building a fully electrical motorcycle.'],
     },
 ];
 const Timeline = () => {

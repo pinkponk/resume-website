@@ -20,10 +20,10 @@
 
 .menu a {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     transition: background-color 0.3s, color 0.3s;
 
     color: #4281A4;

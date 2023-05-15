@@ -7,6 +7,7 @@
     text-align: center;
     margin-bottom: 2rem;
     color: #4281A4;
+    font-size: 3rem;
 }
 
 .buzzword-bingo-content {
@@ -16,22 +17,14 @@
     align-items: center;
 }
 
-.buzzword-bingo img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
 
 .buzzword-bingo-text {
-    max-width: 700px;
+    max-width: 60%;
     margin: 1rem;
 }
 
 .buzzword-bingo-text p {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     color: #333;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -56,7 +49,7 @@
     align-items: center;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     flex-wrap: wrap;
 }
 

@@ -1,5 +1,5 @@
 // src/projects/Project1.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import githubLogo from '../assets/github-mark-white.png'; // Import the GitHub logo
 import bannerImage from '../assets/project-life-code/banner.jpg';
@@ -11,8 +11,12 @@ import videoYoutube from '../assets/project-life-code/main_intro_no_sound.mp4';
 import youtubeLogo from '../assets/youtube-icon.png'; // Import the YouTube logo
 import styles from './ProjectDetail.module.css';
 
-
 const Project1 = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className={styles['project-detail']}>
             <div

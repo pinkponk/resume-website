@@ -12,12 +12,15 @@
 .projects {
     padding: 2rem;
     background-color: #f1faee;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .projects h2 {
     text-align: center;
     margin-bottom: 2rem;
     color: #4281A4;
+    font-size: 3rem;
 }
 
 .projects h2:after {
@@ -35,6 +38,7 @@
 .project-grid {
     display: grid;
     padding-top: 2rem;
+
     /* Change from flex to grid */
     grid-template-columns: repeat(4, 1fr);
     /* Define 3 columns */
@@ -44,8 +48,8 @@
 }
 
 .project-thumb {
-    height: 220px;
-    width: 200px;
+    height: 320px;
+    width: 300px;
     margin-bottom: 1rem;
     overflow: hidden;
     position: relative;
@@ -85,7 +89,7 @@
     margin: 0;
     color: #ffffff;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 

@@ -100,14 +100,14 @@ const TimelineData = [
     {
         type: 'Scholarship',
         date: '2016',
-        institution: 'Henrik Göranssons Sandviken Scholarship for good grades.',
+        institution: 'Henrik Göranssons Sandviken Scholarship for excellent grades.',
         image: stipendium,
         details: [],
     },
     {
         type: 'Scholarship',
         date: '2016',
-        institution: 'General Scholarship for good grades.',
+        institution: 'General Scholarship for excellent grades.',
         image: stipendium,
         details: [],
     },
@@ -227,9 +227,9 @@ const Timeline = () => {
         <section className="timeline" id="timeline" ref={timelineRef}>
             <h2>Education and Work Experience</h2>
             <div className="timeline-container">
-                <div className="timeline-left">
-                    {TimelineData.filter((_, index) => index % 2 === 0).map((item, index) => (
-                        <div key={index} className="timeline-item left">
+                <div className="timeline-items">
+                    {TimelineData.map((item, index) => (
+                        <div key={index} className="timeline-item">
                             <div className="timeline-dot"></div>
                             <div className="timeline-content">
                                 <img src={item.image} alt="" />
@@ -247,31 +247,9 @@ const Timeline = () => {
                         </div>
                     ))}
                 </div>
-                <div className="timeline-line">
-                    <div className="timeline-start-dot"></div>
-                    <div className="timeline-end-dot"></div>
-                </div>
-                <div className="timeline-right">
-                    <span style={{ height: '100px', display: 'block' }}></span> {/* Add this line */}
-                    {TimelineData.filter((_, index) => index % 2 !== 0).map((item, index) => (
-                        <div key={index} className="timeline-item right">
-                            <div className="timeline-dot"></div>
-                            <div className="timeline-content">
-                                <img src={item.image} alt="" />
-                                <div className="timeline-text">
-                                    <h3>{item.type}</h3>
-                                    <h4>{item.date}</h4>
-                                    <h5>{item.institution}</h5>
-                                    <ul>
-                                        {item.details.map((detail, idx) => (
-                                            <li key={idx}>{detail}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <div className="timeline-line"></div>
+                <div className="timeline-start-dot"></div>
+                <div className="timeline-end-dot"></div>
             </div>
         </section>
     );

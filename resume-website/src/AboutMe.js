@@ -1,5 +1,6 @@
 // src/AboutMe.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AboutMe.css';
 import profileImage from './assets/profile-image.jpg';
 
@@ -115,6 +116,7 @@ const AboutMe = () => {
                     <p>
                         With a strong track record of projects under my belt, I am excited to continue pushing the boundaries of technology and innovation in order to make a meaningful impact on the world around us. My diverse skill set, combined with my passion for learning and personal growth, positions me as a valuable contributor to any team or project. As an engineer, husband, and father, I am driven by my commitment to creating a better future for my family and for society as a whole. I invite you to explore my work, skills, and experiences further, and I look forward to the possibility of working together to shape the world of tomorrow.
                     </p>
+                    <Link to="/contact" className="contact-btn">Contact Me</Link>
                 </div>
             </div>
         </section>

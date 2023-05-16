@@ -47,7 +47,7 @@ const Start = () => {
 
     return (
         <section className="hero">
-            <video src={backgroundImage} autoPlay loop muted className={videoBlurred ? 'blurred' : ''} />
+            <video src={backgroundImage} autoPlay playsInline loop muted className={videoBlurred ? 'blurred' : ''} />
             <div className={`overlay ${overlayVisible ? 'visible' : ''}`}>
                 <img src={profileImage} alt="Profile" />
                 <h1>Henrik Djurestål</h1>

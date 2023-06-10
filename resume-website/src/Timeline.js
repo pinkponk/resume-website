@@ -15,64 +15,84 @@ const TimelineData = [
     {
         type: 'Paternity leave',
         date: '2023-ongoing',
-        institution: 'At home',
+        institution: '',
         image: paternity,
         details: [
-            'I will back in september 2023',
+            'I will start working in September 2023',
         ],
     },
     {
-        type: 'Technical project manager',
+        type: 'Technical product manager (Data Fusion Product)',
         date: '2021-ongoing',
         institution: 'Saab Emerging Technologies AB',
         image: saab,
         details: [
-            'The new software product was broken out 2021 to a new saab owned company.',
-            'Understand customers needs and translate into product roadmap together with product vision',
+            'The new software product was broken out 2021 to a new fully Saab owned company.',
+            'As the Technical Product Manager for a data fusion product at a leading military company, I effectively strategized and developed a comprehensive product roadmap that aligned with our long-term vision. My primary responsibilities included:',
+            '- Engaging with potential customers to gather requirements and tailor the product to their needs.',
+            '- Designing and facilitating on-site proof of concept demonstrations for international customers, showcasing the product\'s capabilities and fostering trust in its effectiveness.',
+            '- Collaborating with cross-functional teams to drive product development and align with customer requirements.',
+            '- Continuously monitoring product performance, analyzing user feedback, and updating the product roadmap.',
+            '- Establishing quality control standards and release management processes for seamless product delivery.',
+            '- Prioritizing product backlog, balancing customer requirements, market trends, and resource availability.'
+
         ],
+        skills: 'Gitlab, Scrum, AI, Product roadmap, Product backlog, Product vision'
     },
     {
-        type: 'Co-owner',
+        type: 'Robotics Engineer (Part-time)',
         date: '2014-ongoing',
-        institution: 'Intelligent Machines Stockholm AB',
+        institution: 'Intelligent Machines Stockholm AB - Co-owner',
         image: intmach,
         details: [
-            'Product development in the field of robotics.',
-            'Designed a commercial service robot in CAD.',
-            'Webpage: www.intmach.com',
+            'As a versatile Robotics Engineer in a small robotics company, I contributed to numerous projects, most recently the development and release of an advanced floor marking robot for large-scale fairs. My key responsibilities included:',
+            '- Participating in code development, hardware design, CAD modeling, and product testing.', ,
+            '- Producing marketing materials such as demonstrations and promotional videos.',
+            '- Adapting to various roles and acquiring new skills essential for a small company\'s success.',
+            'Website: www.intmach.com',
         ],
+        skills: 'Python, C++, ROS1, ROS2, OpenCV, Gazebo, Autodesk Inventor, 3D printing, Arduino, Raspberry Pi, Docker'
     },
     {
-        type: 'Team lead',
+        type: 'Team lead (Data Fusion Product)',
         date: '2020-2021',
-        institution: 'Saab AB',
+        institution: 'Saab AB - Cyber Security Department',
         image: saab,
         details: [
-            'I lead a fantastic development team that built a completely new Saab product',
-            'Worked with: AI, kubernetes, microservices, many different databases, distributed storage and more.',
+            'As a Team Lead for a military company, I managed and expanded a team of 4 to 10+ members, working on a complex data fusion product. My key responsibilities included:',
+            '- Recruiting top talent to augment team capabilities and ensure a well-rounded skill set.',
+            '- Participating in full-stack development and implementing novel AI models to enhance product capabilities.',
+            '- Promoting the product at numerous presentations, increasing product visibility.',
+            '- Providing technical guidance, fostering a collaborative team environment, and enabling professional growth.',
+            '- Overseeing goals, priorities, and project roadmaps; monitoring progress and keeping stakeholders informed.',
         ],
+        skills: ' Generative AI, GAN, seq2seq, LSTM, CNN, Object detection, Instance segmentation, image segmentation, kubernetes, microservices, Mongodb (nosql), Postgres (sql), ArangoDB (graph db), Milvus (ANN db), ceph (distributed storage), Prometheus, Grafana.'
     },
     {
-        type: 'System developer',
-        date: '2018-2022',
-        institution: 'Saab AB',
+        type: 'System developer (Data Fusion Product)',
+        date: '2018-2020',
+        institution: 'Saab AB - Cyber Security Department',
         image: saab,
         details: [
-            'Started up new product at the department of cyber security.',
-            'Worked with full stack, system design, high performance AI features, databases.',
-            'Worked with: Python, Tensorflow, Javascript, docker, mongodb, kubernetes, REST.',
+            'As a System Developer, I played a key role in creating a high-value military product from scratch, ultimately leading to the formation of a separate company. Working closely with my manager and a fellow developer, I tackled complex development tasks, including:',
+            '- Designing and implementing microservices to ensure seamless system integration in complex operational contexts.',
+            '- Developing unique AI models to optimize performance and enhance military capabilities.',
+            '- Pioneering product growth into a standalone business by shaping the roadmap and building a skilled team.',
         ],
+        skills: 'Python, Tensorflow, Pytorch, Javascript, docker, mongodb, kubernetes, REST, OpenAPI, Jenkins.'
     },
     {
-        type: 'Software developer',
+        type: 'Software Developer (Automatic Sea Surveillance)',
         date: '2017-2018',
-        institution: 'Saab AB',
+        institution: 'Saab AB - Data Fusion Department',
         image: saab,
         details: [
-            'Worked with automatic surveillance in the data fusion department.',
-            'Continued master thesis research using AI and tracking.',
-            'Worked with: Python, Java, Protocol buffer, Tensorflow.',
+            'As a Software Developer, I focused on automatic sea surveillance, AI integration, and master\'s thesis research continuation. Key achievements included:',
+            '- Developing algorithms and applications using Python, Java, and TensorFlow to enhance surveillance systems.',
+            '- Pioneering AI exploration in products before its industry popularity, advocating and educating colleagues on its potential applications.',
+            '- Contributing knowledge growth through insights from my master\'s thesis, promoting innovative solutions for surveillance enhancement.',
         ],
+        skills: 'Python, Java, Protocol buffer, Tensorflow.'
     },
     {
         type: 'Master thesis',
@@ -82,8 +102,8 @@ const TimelineData = [
         details: [
             'Studied how deep learning can be used in sea surveillance.',
             'Published the paper.',
-            'Worked with: Python, Keras, Theano, Deep learning, CNN network.',
         ],
+        skills: 'Python, Tensorflow, Keras, Theano, Deep learning, CNN.'
     },
 
     {
@@ -242,6 +262,7 @@ const Timeline = () => {
                                             <li key={idx}>{detail}</li>
                                         ))}
                                     </ul>
+                                    <h5>{item.skills}</h5>
                                 </div>
                             </div>
                         </div>

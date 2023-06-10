@@ -7,3 +7,9 @@
     background-color: #f1faee;
     min-height: 100vh;
 }
+
+.imageLib__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

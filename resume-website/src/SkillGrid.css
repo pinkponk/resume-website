@@ -106,11 +106,25 @@
     user-select: none;
 }
 
+@media (max-width: 1200px) {
+
+    .skill {
+        height: auto;
+        padding: 4px;
+        min-height: 60px;
+    }
+
+    .skill-name {
+        font-size: 1.0rem;
+    }
+}
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
     .skill {
         height: auto;
-        padding: 10px;
+        padding: 2px;
+        min-height: 10vw;
     }
 
     .skill-name {

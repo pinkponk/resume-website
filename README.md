@@ -1,6 +1,6 @@
 # Resume-Website
 
-![Logo](logo512.png)
+![Logo](https://github.com/pinkponk/resume-website/blob/main/resume-website/public/logo192.png)
 ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
 
 **Table of Contents**

@@ -54,7 +54,14 @@ const BuzzwordBingo = () => {
                 { name: 'GAN', strong: false, description: 'Experience with Generative Adversarial Networks. For better or worse I have dabbled with GAN, it is a love/hate relationship. I love its multimodal attributes but hate the fragility of the training. I have used GAN for, image generation, anomaly detection and path prediction. If I would do image generation again I would probably used diffusion methods instead.' },
                 { name: 'VAE', strong: false, description: 'Familiar with Variational Autoencoders' },
                 { name: 'NLP', strong: false, description: 'Experience with Natural Language Processing techniques and algorithms.' },
-
+                { name: 'LLM', strong: true, description: 'Well versed in using Large Language Models.' },
+                { name: 'GPT', strong: false, description: 'OpenAI is my LLM provider of choice.' },
+                { name: 'Dall-E 3', strong: false, description: 'I have used Dall-E 3 to generate plenty of images.' },
+                { name: 'Whisper', strong: false, description: 'Transcriping audio to text using Whisper.' },
+                { name: 'Midjourney', strong: false, description: 'Used when needing more stylized images.' },
+                { name: 'ControlNet', strong: false, description: 'Used with stable diffusion for controlling the diffusion process.' },
+                { name: 'Stable diffusion', strong: false, description: 'Used for image/video generation locally together with ControlNet and Deforum.' },
+                // { name: 'Deforum', strong: false, description: 'Used for image/video generation locally together with ControlNet and Stable diffusion.' },
             ],
         },
         {

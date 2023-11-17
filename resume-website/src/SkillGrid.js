@@ -43,7 +43,7 @@ const SkillGrid = ({ skillGroups }) => {
         setSkills(concatSkills);
 
         // Calculate the grid size dynamically
-        const calculatedGridSize = Math.ceil(Math.sqrt(concatSkills.length));
+        const calculatedGridSize = Math.floor(Math.sqrt(concatSkills.length));
         setGridSize(calculatedGridSize);
     }, [skillGroups]);
 

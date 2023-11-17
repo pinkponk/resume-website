@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Timeline.css';
 import arc from './assets/time-arc.png';
+import deepleap from './assets/time-deepleap.png';
 import intmach from './assets/time-im.jpg';
 import kth from './assets/time-kth.png';
 import norra from './assets/time-norra.jpg';
@@ -13,12 +14,29 @@ import uiuc from './assets/time-uiuc.png';
 
 const TimelineData = [
     {
-        type: 'Paternity leave',
+        type: 'Freelancing AI expert',
         date: '2023-ongoing',
+        institution: 'DeepLeap AB',
+        image: deepleap,
+        details: [
+            'Freelancing AI expert helping companies with their AI needs. What I offer:',
+            '- Provide comprehensive AI solutions, including strategy, development, education, project & product management, and research.',
+            '- Develop tailored AI strategies and oversee end-to-end development process.',
+            '- Stay updated with latest advancements in AI, ensuring adoption of cutting-edge technologies.',
+            '- Educate clients on AI fundamentals and best practices for seamless integration.',
+            '- Successfully manage multiple AI projects, ensuring timely delivery and quality.',
+            '- Foster strong client relationships and identify opportunities for AI implementation.',
+            // 'Recent projects:',
+            // '- EUROP System of Sweden: Developed a deep learning model for image analysis',
+        ],
+    },
+    {
+        type: 'Paternity leave',
+        date: '2023-2023',
         institution: '',
         image: paternity,
         details: [
-            'I will start working in September 2023',
+            'Currently trying to teach her robotics.',
         ],
     },
     {
@@ -44,6 +62,7 @@ const TimelineData = [
         date: '2014-ongoing',
         institution: 'Intelligent Machines Stockholm AB - Co-owner',
         image: intmach,
+        // eslint-disable-next-line no-sparse-arrays
         details: [
             'As a versatile Robotics Engineer in a small robotics company, I contributed to numerous projects, most recently the development and release of an advanced floor marking robot for large-scale fairs. My key responsibilities included:',
             '- Participating in code development, hardware design, CAD modeling, and product testing.', ,

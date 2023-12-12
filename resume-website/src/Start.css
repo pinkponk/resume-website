@@ -56,6 +56,8 @@ body {
 
 .contact-btn {
     display: inline-block;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
     padding: 0.5rem 1rem;
     background-color: #FE938C;
     color: white;

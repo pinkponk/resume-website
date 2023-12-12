@@ -5,6 +5,9 @@ import './Start.css';
 import backgroundImage from './assets/background-video.mp4';
 import profileImage from './assets/profile-image.jpg';
 
+/* global Calendly */
+
+
 const Start = () => {
     const [overlayVisible, setOverlayVisible] = useState(false);
 
@@ -44,6 +47,12 @@ const Start = () => {
         };
     }, [overlayVisible]);
 
+    // Calendly popup handler
+    const openCalendlyPopup = () => {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/henrik-djurestal/30min' });
+        return false;
+    };
+
 
     return (
         <section className="hero">
@@ -53,6 +62,10 @@ const Start = () => {
                 <h1>Henrik Djurestål</h1>
                 <h2>Father to a daughter, robots, and AI programs</h2>
                 <Link to="/contact" className="contact-btn">Contact Me</Link>
+                {/* Added the button for Calendly */}
+                <button className="contact-btn" onClick={openCalendlyPopup}>
+                    Or Meet Me!
+                </button>
             </div>
         </section>
     );

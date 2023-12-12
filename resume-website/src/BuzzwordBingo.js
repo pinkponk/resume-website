@@ -37,6 +37,8 @@ const BuzzwordBingo = () => {
                 { name: 'Build pipelines', strong: false, description: 'Experience with build pipelines, I have made pipelines using both Jenkins, Tekton and Gitlab.' },
                 { name: 'Jupyter', strong: false, description: 'I use Jupyter notebooks when I need to prototype something or experiment with especially AI models and Datasets.' },
                 { name: 'Bash', strong: false, description: 'Experience with Bash scripting' },
+                { name: 'Streamlit', strong: false, description: 'I have used Streamlit for making web apps for my AI models.' },
+                { name: 'Devcontainers', strong: false, description: 'I use devcontainers for all my development.' },
             ],
         },
         {
@@ -62,6 +64,12 @@ const BuzzwordBingo = () => {
                 { name: 'ControlNet', strong: false, description: 'Used with stable diffusion for controlling the diffusion process.' },
                 { name: 'Stable diffusion', strong: false, description: 'Used for image/video generation locally together with ControlNet and Deforum.' },
                 // { name: 'Deforum', strong: false, description: 'Used for image/video generation locally together with ControlNet and Stable diffusion.' },
+                { name: 'Huggingface', strong: false, description: 'I use Huggingface for all my NLP needs.' },
+                { name: 'RAG', strong: false, description: 'I have used RAG for question answering.' },
+                { name: 'COT', strong: false, description: 'I have used COT when running AI agents.' },
+                { name: 'Langchain', strong: false, description: 'I have used Langchain for my AI agent development.' },
+                { name: 'Function calling', strong: false, description: 'I have used function calling for my AI agent development.' },
+
             ],
         },
         {

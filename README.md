@@ -1,4 +1,5 @@
 # [OBSOLETE] Resume-Website
+I moved the active site to a private gitlab and I will host it on my own kubernetes on digital ocean instead of AWS s3 bucket
 
 ![Logo](https://github.com/pinkponk/resume-website/blob/main/resume-website/public/logo192.png)
 ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)

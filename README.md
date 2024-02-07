@@ -1,4 +1,4 @@
-# Resume-Website
+# [OBSOLETE] Resume-Website
 
 ![Logo](https://github.com/pinkponk/resume-website/blob/main/resume-website/public/logo192.png)
 ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
